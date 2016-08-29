@@ -130,19 +130,19 @@ COMBINED =
     [2.2440]    [2.6290]    [2.8170]    [2.6730]    [2.1650]    [1.3770]    [   NaN]
     [2.3890]    [2.6340]    [2.7270]    [2.7360]    [1.6830]    [1.2760]    [   NaN]
 
-aveRow=mean(NUM,2)
 
-aveRow =
+for i = 1:12
 
-       NaN
-       NaN
-       NaN
-       NaN
-       NaN
-    1.2808
-    1.2798
-       NaN
-       NaN
-       NaN
-       NaN
-       NaN
+if i<6
+  aveRow(i) = mean(NUM(i,2:31));
+elseif i>7
+  aveRow(i) = mean(NUM(i,1:30));
+else
+  aveRow(i) = mean(NUM(i,:));
+end
+
+end
+
+
+
+
