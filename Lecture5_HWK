@@ -1,0 +1,27 @@
+[rows,columns]= size(processed_data)
+for i=1:rows
+ 
+  peak_demand=max(processed_data( (i-1)*24+1: (i-1)*24+24));
+  
+end
+
+This gave a single number as output
+
+
+
+
+I also tried this:
+
+for i=1:length(processed_data)
+  
+  peak_demand=max(processed_data( (i-1)*24+1: (i-1)*24+24));
+  
+end
+
+Which gave output "Index exceeds matrix dimensions"
+
+
+
+I also switched "max" with "findpeaks" and got the same output
+
+With solely the "findpeaks" function, I got an output of a 1x715 vector
